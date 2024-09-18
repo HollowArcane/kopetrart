@@ -1,0 +1,30 @@
+. Features
+    - total_general
+    - total_direct
+    - prix_unitaire_entree
+    - prix_unitaire_sortie
+    - prix_par_centre
+
+. Tables
+    - unite(id, libelle)
+    - nature(id, libelle) { 'variable' , 'fixe'}
+    - corporabilite(id, libelle) { 'incorporable', 'non incorporable', 'suppletive' }
+    - rubrique(id, libelle, unite, nature, corporabilite)
+    - charge(id, rubrique, prix_total, quantite_total, date)
+    - centre(id, libelle)
+    - charge_centre(id, rubrique, centre, 0 <= pourcentage <= 1)
+
+
+create table unite(
+    id serial primary key,
+    libelle varchar(255)
+);
+
+create table nature(
+    id serrial primary key,
+    libelle varchar(255)
+); 
+
+create table corporabilite(
+    id serrial primary key,
+);
