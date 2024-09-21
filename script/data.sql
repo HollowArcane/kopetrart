@@ -78,6 +78,11 @@ INSERT INTO Charge (id_rubique, prix_total, quantite_total, date) VALUES
 ((SELECT id FROM Rubrique WHERE libelle = 'CHARGES FINANCIERES'), 23007600, 6, CURRENT_DATE);
 
 
+INSERT INTO Centre (libelle, estProductif) VALUES
+('Usine', true),
+('Plantation', true),
+('Autre', false);  -- You can adjust these names and productivity status as needed
+
 INSERT INTO Charge_centre (id_rubique, id_centre, pourcentage) VALUES
 ((SELECT id FROM Rubrique WHERE libelle = 'ACHAT SEMENCES'), 1, 1.0), 
 ((SELECT id FROM Rubrique WHERE libelle = 'ACHAT ENGRAIS&ASSIMILES'), 1, 1.0),

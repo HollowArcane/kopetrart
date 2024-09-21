@@ -34,6 +34,9 @@ create table Centre (
     libelle varchar(255),
     estProductif boolean
 );
+-- ALTER TABLE Centre
+-- ADD COLUMN estProductif boolean;
+
 
 CREATE TABLE Charge_centre (
     id serial PRIMARY KEY,
@@ -83,7 +86,7 @@ CREATE OR REPLACE VIEW v_cout_total_general AS -- ty cout total general raha ata
 SELECT 
     SUM(v.cout_total) AS cout_total_direct
 FROM 
-    v_cout_total_par_centre v
+    v_cout_total_par_centre v;
 
 
 CREATE OR REPLACE FUNCTION get_total_general(id_centre_nonProductif INT) -- ty cout total raha selectionner-na le centre non productif anaovana  repartition 
