@@ -1,7 +1,7 @@
 - Features
     - cout_total_general
     - cout_total_direct
-    - cout_unitaire_entree
+    -   
     - cout_unitaire_sortie
     - cout_par_centre
 
@@ -10,7 +10,7 @@
     - nature(id, libelle) { 'variable' , 'fixe'}
     - corporabilite(id, libelle) { 'incorporable', 'non incorporable', 'suppletive' }
     - rubrique(id, libelle, unite, nature, corporabilite)
-    - charge(id, rubrique, prix_total, quantite_total, date)
+    - charge(id, rubrique, prix_total, quantite_total, d    ate)
     - centre(id, libelle)
     - charge_centre(id, rubrique, centre, 0 <= pourcentage <= 1)
     - product(id, libelle)
@@ -144,10 +144,10 @@
 . Couts:
     - Model:
         - CoutModel:
-            - get_total_general($id_limit_centre) -> number
-            - get_total_direct($id_limit_centre) -> number
+            + get_total_general($id_limit_centre) -> number
+            + get_total_direct($id_limit_centre) -> number  : cout total direct tokony tsisy argument satria independant @repartition le centre non productif le calcule anle izy  
             - get_unitaire_sortie($id_limit_centre) -> number
-            - get_unitaire_rubrique() -> array<{ rubrique, prix_unitaire, prix_total, quantite_total }>
+            + get_unitaire_rubrique() -> array<{ rubrique, prix_unitaire, prix_total, quantite_total }>
 
     - View:
         cout
@@ -164,8 +164,6 @@
 
     - Controller:
         - index(): all functions in Model\CoutModel -> View\cout
-
-
 
 ... Ra mbola manam-pton
 - $date_min, $date_max CoutModel, Charge
