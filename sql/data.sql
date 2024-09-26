@@ -1,0 +1,214 @@
+-- DONNÉES FIXES
+-- !IMPORTANT afaka soloina le label fa le ordre important (mety manimba vue):  1: variable, 2: fixe
+INSERT INTO nature(label) VALUES('Variable');
+INSERT INTO nature(label) VALUES('Fixe'    );
+
+-- !IMPORTANT afaka soloina le label fa le ordre important (mety manimba vue):  1: incorporable, 2: non incorporable, 3: suppletiveC
+INSERT INTO incorporation(label) VALUES('Incorporable'    );
+INSERT INTO incorporation(label) VALUES('Non Incorporable');
+INSERT INTO incorporation(label) VALUES('Supplétive'      );
+
+-- !IMPORTANT afaka soloina le label fa le ordre important (mety manimba vue):  1: centre de structure, 2: centre operationel
+INSERT INTO center_type(label) VALUES('Structure');
+INSERT INTO center_type(label) VALUES('Actif?');
+
+
+-- DONNÉES DE TEST
+-- EXERCICE
+INSERT INTO exercice_year(label) VALUES('Exercice Comptable Test');
+
+-- CHARGES
+INSERT INTO unit(label) VALUES('KG'                   );
+INSERT INTO unit(label) VALUES('NB'                   );
+INSERT INTO unit(label) VALUES('Cons periodique'      );
+INSERT INTO unit(label) VALUES('KW'                   );
+INSERT INTO unit(label) VALUES('LITRES'               );
+INSERT INTO unit(label) VALUES('Loyer mensuel'        );
+INSERT INTO unit(label) VALUES('Heure de travail (HT)');
+INSERT INTO unit(label) VALUES('Sal mens ou HT'       );
+
+INSERT INTO center(label, id_center_type) VALUES('Plantation', 2);
+INSERT INTO center(label, id_center_type) VALUES('Usine'     , 2);
+INSERT INTO center(label, id_center_type) VALUES('Adm/Dist'  , 1);
+
+INSERT INTO product(label, quantity, id_unit) VALUES('Maïs concassé', 338_000.0, 1);
+
+INSERT INTO section(no_account, label, id_unit, id_nature, id_incorporation) VALUES('600', 'Achat semences'                           , 1, 1, 1);
+INSERT INTO section(no_account, label, id_unit, id_nature, id_incorporation) VALUES('600', 'Achat engrais & assimiles'                , 1, 1, 1);
+INSERT INTO section(no_account, label, id_unit, id_nature, id_incorporation) VALUES('600', 'Achat emballage'                          , 2, 1, 1);
+INSERT INTO section(no_account, label, id_unit, id_nature, id_incorporation) VALUES('600', 'Fournit de magasin'                       , 3, 1, 1);
+INSERT INTO section(no_account, label, id_unit, id_nature, id_incorporation) VALUES('600', 'Fournit bur'                              , 3, 2, 1);
+INSERT INTO section(no_account, label, id_unit, id_nature, id_incorporation) VALUES('600', 'Piec rech vehicules'                      , 3, 1, 3);
+INSERT INTO section(no_account, label, id_unit, id_nature, id_incorporation) VALUES('600', 'Eau et electricite'                       , 4, 1, 1);
+INSERT INTO section(no_account, label, id_unit, id_nature, id_incorporation) VALUES('600', 'Gaz combust, Carburant lubrif'            , 5, 1, 1);
+INSERT INTO section(no_account, label, id_unit, id_nature, id_incorporation) VALUES('600', 'Location terrains'                        , 6, 2, 1);
+INSERT INTO section(no_account, label, id_unit, id_nature, id_incorporation) VALUES('600', 'Entreriens et reparations'                , 3, 1, 1);
+INSERT INTO section(no_account, label, id_unit, id_nature, id_incorporation) VALUES('600', 'Assurances'                               , 3, 2, 2);
+INSERT INTO section(no_account, label, id_unit, id_nature, id_incorporation) VALUES('600', 'Photocopies et assimiles'                 , 3, 2, 3);
+INSERT INTO section(no_account, label, id_unit, id_nature, id_incorporation) VALUES('600', 'Telephone'                                , 3, 2, 3);
+INSERT INTO section(no_account, label, id_unit, id_nature, id_incorporation) VALUES('600', 'Envoi colis (Lettre & Doc...)'            , 3, 1, 3);
+INSERT INTO section(no_account, label, id_unit, id_nature, id_incorporation) VALUES('600', 'Honoraires'                               , 3, 1, 3);
+INSERT INTO section(no_account, label, id_unit, id_nature, id_incorporation) VALUES('600', 'Frais de transport'                       , 1, 1, 3);
+INSERT INTO section(no_account, label, id_unit, id_nature, id_incorporation) VALUES('600', 'Voyages et deplacement'                   , 3, 1, 1);
+INSERT INTO section(no_account, label, id_unit, id_nature, id_incorporation) VALUES('600', 'Mission(Depl + Hebergt + Restº)'          , 3, 2, 1);
+INSERT INTO section(no_account, label, id_unit, id_nature, id_incorporation) VALUES('600', 'Commisions banques'                       , 3, 1, 3);
+INSERT INTO section(no_account, label, id_unit, id_nature, id_incorporation) VALUES('600', 'Autres charges externe'                   , 3, 1, 3);
+INSERT INTO section(no_account, label, id_unit, id_nature, id_incorporation) VALUES('600', 'Cueilleurs'                               , 1, 1, 1);
+INSERT INTO section(no_account, label, id_unit, id_nature, id_incorporation) VALUES('600', 'Imports et taxes'                         , 3, 2, 1);
+INSERT INTO section(no_account, label, id_unit, id_nature, id_incorporation) VALUES('600', 'Salaires M.O temporaires'                 , 7, 1, 3);
+INSERT INTO section(no_account, label, id_unit, id_nature, id_incorporation) VALUES('600', 'Salaires permanents'                      , 8, 2, 3);
+INSERT INTO section(no_account, label, id_unit, id_nature, id_incorporation) VALUES('600', 'CNAPS: Cotisation patronale'              , 8, 2, 3);
+INSERT INTO section(no_account, label, id_unit, id_nature, id_incorporation) VALUES('600', 'Organisme sanitaire: Cotisation patronale', 8, 2, 3);
+INSERT INTO section(no_account, label, id_unit, id_nature, id_incorporation) VALUES('600', 'Autres charges du personnel'              , 8, 1, 3);
+INSERT INTO section(no_account, label, id_unit, id_nature, id_incorporation) VALUES('600', 'Amortissements'                           , 3, 2, 3);
+INSERT INTO section(no_account, label, id_unit, id_nature, id_incorporation) VALUES('600', 'Charges financiers'                       , 3, 1, 3);
+
+INSERT INTO exercice(no_account, id_exercice_year, label, credit, debit, date) VALUES('6', 1, 'Achat semences'                           , 0,  4_321_600.0, '2024-09-20');
+INSERT INTO exercice(no_account, id_exercice_year, label, credit, debit, date) VALUES('6', 1, 'Achat engrais & assimiles'                , 0, 60_000_000.0, '2024-09-20');
+INSERT INTO exercice(no_account, id_exercice_year, label, credit, debit, date) VALUES('6', 1, 'Achat emballage'                          , 0,  7_796_400.0, '2024-09-20');
+INSERT INTO exercice(no_account, id_exercice_year, label, credit, debit, date) VALUES('6', 1, 'Fournit de magasin'                       , 0,  4_446_700.0, '2024-09-20');
+INSERT INTO exercice(no_account, id_exercice_year, label, credit, debit, date) VALUES('6', 1, 'Fournit bur'                              , 0,  2_783_700.0, '2024-09-20');
+INSERT INTO exercice(no_account, id_exercice_year, label, credit, debit, date) VALUES('6', 1, 'Piec rech vehicules'                      , 0, 14_373_200.0, '2024-09-20');
+INSERT INTO exercice(no_account, id_exercice_year, label, credit, debit, date) VALUES('6', 1, 'Eau et electricite'                       , 0, 34_637_200.0, '2024-09-20');
+INSERT INTO exercice(no_account, id_exercice_year, label, credit, debit, date) VALUES('6', 1, 'Gaz combust, Carburant lubrif'            , 0, 35_675_400.0, '2024-09-20');
+INSERT INTO exercice(no_account, id_exercice_year, label, credit, debit, date) VALUES('6', 1, 'Location terrains'                        , 0,  9_742_000.0, '2024-09-20');
+INSERT INTO exercice(no_account, id_exercice_year, label, credit, debit, date) VALUES('6', 1, 'Entreriens et reparations'                , 0,  4_987_300.0, '2024-09-20');
+INSERT INTO exercice(no_account, id_exercice_year, label, credit, debit, date) VALUES('6', 1, 'Assurances'                               , 0,  5_927_200.0, '2024-09-20');
+INSERT INTO exercice(no_account, id_exercice_year, label, credit, debit, date) VALUES('6', 1, 'Photocopies et assimiles'                 , 0,    450_900.0, '2024-09-20');
+INSERT INTO exercice(no_account, id_exercice_year, label, credit, debit, date) VALUES('6', 1, 'Telephone'                                , 0,  8_236_300.0, '2024-09-20');
+INSERT INTO exercice(no_account, id_exercice_year, label, credit, debit, date) VALUES('6', 1, 'Envoi colis (Lettre & Doc...)'            , 0,    789_500.0, '2024-09-20');
+INSERT INTO exercice(no_account, id_exercice_year, label, credit, debit, date) VALUES('6', 1, 'Honoraires'                               , 0,  8_538_100.0, '2024-09-20');
+INSERT INTO exercice(no_account, id_exercice_year, label, credit, debit, date) VALUES('6', 1, 'Frais de transport'                       , 0,  3_200_000.0, '2024-09-20');
+INSERT INTO exercice(no_account, id_exercice_year, label, credit, debit, date) VALUES('6', 1, 'Voyages et deplacement'                   , 0,  1_934_000.0, '2024-09-20');
+INSERT INTO exercice(no_account, id_exercice_year, label, credit, debit, date) VALUES('6', 1, 'Mission(Depl + Hebergt + Restº)'          , 0, 16_222_500.0, '2024-09-20');
+INSERT INTO exercice(no_account, id_exercice_year, label, credit, debit, date) VALUES('6', 1, 'Commisions banques'                       , 0, 31_523_800.0, '2024-09-20');
+INSERT INTO exercice(no_account, id_exercice_year, label, credit, debit, date) VALUES('6', 1, 'Autres charges externe'                   , 0,  3_142_800.0, '2024-09-20');
+INSERT INTO exercice(no_account, id_exercice_year, label, credit, debit, date) VALUES('6', 1, 'Cueilleurs'                               , 0, 31_784_800.0, '2024-09-20');
+INSERT INTO exercice(no_account, id_exercice_year, label, credit, debit, date) VALUES('6', 1, 'Imports et taxes'                         , 0,  5_029_800.0, '2024-09-20');
+INSERT INTO exercice(no_account, id_exercice_year, label, credit, debit, date) VALUES('6', 1, 'Salaires M.O temporaires'                 , 0, 89_267_100.0, '2024-09-20');
+INSERT INTO exercice(no_account, id_exercice_year, label, credit, debit, date) VALUES('6', 1, 'Salaires permanents'                      , 0, 71_735_100.0, '2024-09-20');
+INSERT INTO exercice(no_account, id_exercice_year, label, credit, debit, date) VALUES('6', 1, 'CNAPS: Cotisation patronale'              , 0, 36_320_600.0, '2024-09-20');
+INSERT INTO exercice(no_account, id_exercice_year, label, credit, debit, date) VALUES('6', 1, 'Organisme sanitaire: Cotisation patronale', 0,    654_600.0, '2024-09-20');
+INSERT INTO exercice(no_account, id_exercice_year, label, credit, debit, date) VALUES('6', 1, 'Autres charges du personnel'              , 0, 15_956_700.0, '2024-09-20');
+INSERT INTO exercice(no_account, id_exercice_year, label, credit, debit, date) VALUES('6', 1, 'Amortissements'                           , 0, 28_639_600.0, '2024-09-20');
+INSERT INTO exercice(no_account, id_exercice_year, label, credit, debit, date) VALUES('6', 1, 'Charges financiers'                       , 0, 23_007_600.0, '2024-09-20');
+
+INSERT INTO expense(id_section, id_exercice, quantity, price, date) VALUES( 1,  1, 1,  4_321_600.0, '2024-09-20');
+INSERT INTO expense(id_section, id_exercice, quantity, price, date) VALUES( 2,  2, 1, 60_000_000.0, '2024-09-20');
+INSERT INTO expense(id_section, id_exercice, quantity, price, date) VALUES( 3,  3, 1,  7_796_400.0, '2024-09-20');
+INSERT INTO expense(id_section, id_exercice, quantity, price, date) VALUES( 4,  4, 1,  4_446_700.0, '2024-09-20');
+INSERT INTO expense(id_section, id_exercice, quantity, price, date) VALUES( 5,  5, 1,  2_783_700.0, '2024-09-20');
+INSERT INTO expense(id_section, id_exercice, quantity, price, date) VALUES( 6,  6, 1, 14_373_200.0, '2024-09-20');
+INSERT INTO expense(id_section, id_exercice, quantity, price, date) VALUES( 7,  7, 1, 34_637_200.0, '2024-09-20');
+INSERT INTO expense(id_section, id_exercice, quantity, price, date) VALUES( 8,  8, 1, 35_675_400.0, '2024-09-20');
+INSERT INTO expense(id_section, id_exercice, quantity, price, date) VALUES( 9,  9, 1,  9_742_000.0, '2024-09-20');
+INSERT INTO expense(id_section, id_exercice, quantity, price, date) VALUES(10, 10, 1,  4_987_300.0, '2024-09-20');
+INSERT INTO expense(id_section, id_exercice, quantity, price, date) VALUES(11, 11, 1,  5_927_200.0, '2024-09-20');
+INSERT INTO expense(id_section, id_exercice, quantity, price, date) VALUES(12, 12, 1,    450_900.0, '2024-09-20');
+INSERT INTO expense(id_section, id_exercice, quantity, price, date) VALUES(13, 13, 1,  8_236_300.0, '2024-09-20');
+INSERT INTO expense(id_section, id_exercice, quantity, price, date) VALUES(14, 14, 1,    789_500.0, '2024-09-20');
+INSERT INTO expense(id_section, id_exercice, quantity, price, date) VALUES(15, 15, 1,  8_538_100.0, '2024-09-20');
+INSERT INTO expense(id_section, id_exercice, quantity, price, date) VALUES(16, 16, 1,  3_200_000.0, '2024-09-20');
+INSERT INTO expense(id_section, id_exercice, quantity, price, date) VALUES(17, 17, 1,  1_934_000.0, '2024-09-20');
+INSERT INTO expense(id_section, id_exercice, quantity, price, date) VALUES(18, 18, 1, 16_222_500.0, '2024-09-20');
+INSERT INTO expense(id_section, id_exercice, quantity, price, date) VALUES(19, 19, 1, 31_523_800.0, '2024-09-20');
+INSERT INTO expense(id_section, id_exercice, quantity, price, date) VALUES(20, 20, 1,  3_142_800.0, '2024-09-20');
+INSERT INTO expense(id_section, id_exercice, quantity, price, date) VALUES(21, 21, 1, 31_784_800.0, '2024-09-20');
+INSERT INTO expense(id_section, id_exercice, quantity, price, date) VALUES(22, 22, 1,  5_029_800.0, '2024-09-20');
+INSERT INTO expense(id_section, id_exercice, quantity, price, date) VALUES(23, 23, 1, 89_267_100.0, '2024-09-20');
+INSERT INTO expense(id_section, id_exercice, quantity, price, date) VALUES(24, 24, 1, 71_735_100.0, '2024-09-20');
+INSERT INTO expense(id_section, id_exercice, quantity, price, date) VALUES(25, 25, 1, 36_320_600.0, '2024-09-20');
+INSERT INTO expense(id_section, id_exercice, quantity, price, date) VALUES(26, 26, 1,    654_600.0, '2024-09-20');
+INSERT INTO expense(id_section, id_exercice, quantity, price, date) VALUES(27, 27, 1, 15_956_700.0, '2024-09-20');
+INSERT INTO expense(id_section, id_exercice, quantity, price, date) VALUES(28, 28, 1, 28_639_600.0, '2024-09-20');
+INSERT INTO expense(id_section, id_exercice, quantity, price, date) VALUES(29, 29, 1, 23_007_600.0, '2024-09-20');
+
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES( 1, 1, 1.00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES( 2, 1, 1.00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES( 3, 1,  .00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES( 4, 1,  .05);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES( 5, 1,  .00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES( 6, 1,  .70);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES( 7, 1,  .05);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES( 8, 1,  .60);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES( 9, 1,  .60);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(10, 1,  .15);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(11, 1,  .00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(12, 1,  .00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(13, 1,  .00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(14, 1,  .00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(15, 1,  .00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(16, 1,  .00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(17, 1,  .30);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(18, 1,  .00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(19, 1,  .30);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(20, 1,  .30);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(21, 1, 1.00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(22, 1,  .30);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(23, 1,  .25);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(24, 1,  .45);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(25, 1,  .45);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(26, 1,  .00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(27, 1,  .30);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(28, 1,  .05);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(29, 1,  .00);
+
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES( 1, 2, .00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES( 2, 2, .00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES( 3, 2, .00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES( 4, 2, .95);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES( 5, 2, .00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES( 6, 2, .00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES( 7, 2, .80);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES( 8, 2, .30);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES( 9, 2, .30);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(10, 2, .70);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(11, 2, .00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(12, 2, .00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(13, 2, .40);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(14, 2, .00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(15, 2, .00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(16, 2, .00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(17, 2, .30);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(18, 2, .00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(19, 2, .30);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(20, 2, .30);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(21, 2, .00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(22, 2, .35);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(23, 2, .75);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(24, 2, .35);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(25, 2, .35);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(26, 2, .00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(27, 2, .30);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(28, 2, .70);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(29, 2, .00);
+
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES( 1, 3,  .00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES( 2, 3,  .00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES( 3, 3,  .00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES( 4, 3,  .00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES( 5, 3, 1.00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES( 6, 3,  .30);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES( 7, 3,  .15);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES( 8, 3,  .10);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES( 9, 3,  .10);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(10, 3,  .15);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(11, 3,  .00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(12, 3, 1.00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(13, 3,  .60);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(14, 3, 1.00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(15, 3, 1.00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(16, 3, 1.00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(17, 3,  .40);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(18, 3, 1.00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(19, 3,  .40);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(20, 3,  .40);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(21, 3,  .00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(22, 3,  .35);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(23, 3,  .00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(24, 3,  .20);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(25, 3,  .20);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(26, 3, 1.00);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(27, 3,  .40);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(28, 3,  .25);
+INSERT INTO expense_center(id_expense, id_center, percentage) VALUES(29, 3, 1.00);

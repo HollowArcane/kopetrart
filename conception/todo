@@ -13,7 +13,7 @@
     - charge(id, rubrique, prix_total, quantite_total, date)
     - centre(id, libelle)
     - charge_centre(id, rubrique, centre, 0 <= pourcentage <= 1)
-    - product(id, libelle)
+    - produit(id, libelle, quantite)
 
 
 . CRUD Rubrique:
