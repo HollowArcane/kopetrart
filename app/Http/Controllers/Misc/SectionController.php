@@ -38,6 +38,7 @@ class SectionController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'no-account' => 'required|numeric|integer',
             'label' => 'required|string|unique:section,label',
             'id-unit' => 'required|exists:unit,id',
             'id-nature' => 'required|exists:nature,id',
@@ -45,6 +46,7 @@ class SectionController extends Controller
         ]);
 
         $section = new Section;
+        $section->no_account = trim($request->input('no-account'));
         $section->label = trim($request->input('label'));
         $section->id_unit = $request->input('id-unit');
         $section->id_nature = $request->input('id-nature');
@@ -85,6 +87,7 @@ class SectionController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
+            'no-account' => 'required|numeric|integer',
             'label' => 'required|string|unique:section,label',
             'id-unit' => 'required|exists:unit,id',
             'id-nature' => 'required|exists:nature,id',
@@ -92,6 +95,7 @@ class SectionController extends Controller
         ]);
 
         $section = Section::find($id);
+        $section->no_account = trim($request->input('no-account'));
         $section->label = trim($request->input('label'));
         $section->id_unit = $request->input('id-unit');
         $section->id_nature = $request->input('id-nature');

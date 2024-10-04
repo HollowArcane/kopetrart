@@ -24,7 +24,7 @@ class ExerciceController extends Controller
     public function create()
     {
         return view($this->form_view)->with([
-            'form_title' => 'Ajout Exercice',
+            'form_title' => 'Ajout Ecriture',
             'form_method' => 'POST',
             'form_action' => '/exercice',
             'exercice_years' => ExerciceYear::options()
@@ -56,7 +56,7 @@ class ExerciceController extends Controller
 
         $exercice->save();
 
-        return redirect('/exerice')->with('success', 'Exercice ajouté avec succès');
+        return redirect('/exerice')->with('success', 'Ecriture ajouté avec succès');
     }
 
     /**
@@ -73,7 +73,7 @@ class ExerciceController extends Controller
     public function edit(string $id)
     {
         return view($this->form_view)->with([
-            'form_title' => 'Modification Exercice',
+            'form_title' => 'Modification Ecriture',
             'form_method' => 'PUT',
             'form_action' => '/exercice/'.$id,
             'item' => Exercice::find($id),
@@ -106,7 +106,7 @@ class ExerciceController extends Controller
 
         $exercice->save();
 
-        return redirect('/exercice')->with('success', 'Exercice modifié avec succès');
+        return redirect('/exercice')->with('success', 'Ecriture modifié avec succès');
     }
 
     /**
@@ -120,6 +120,6 @@ class ExerciceController extends Controller
         else
         { $expense->destroy(); }
 
-        return redirect('/exercice')->with('success', 'Exercice supprimé avec succès');
+        return redirect('/exercice')->with('success', 'Ecriture supprimé avec succès');
     }
 }

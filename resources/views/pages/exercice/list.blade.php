@@ -10,7 +10,7 @@
 
 <h2>
     <x-button.add href="/exercice/create"></x-button.add>
-    Liste des Exercices
+    Liste des Ecritures
 </h2>
 
 @include('includes.message')
